@@ -1,9 +1,7 @@
 /* General Styles */
 .root-pane {
-  -fx-background-color: #ffffff;; /* Light background */
-    -fx-font-family: "Segoe UI", sans-serif, "System"; /* Or choose a specific font */
-     -fx-background-color: linear-gradient(to right, #deeecd, #b2e3c1);
-        -fx-font-size: 14px;
+    -fx-background-color: #f0f4f8; /* Light background */
+    -fx-font-family: "System"; /* Or choose a specific font */
 }
 
 .title-label {
@@ -44,12 +42,6 @@
 }
 .secondary-button:hover {
      -fx-background-color: #607d8b;
-       -fx-scale-x: 1.1;
-         -fx-scale-y: 1.1;
-             transition:
-        -fx-background-color 0.5s ease,
-           -fx-scale-x 0.5s ease,
-            -fx-scale-y 0.5s ease;
 }
 
 .danger-button {
@@ -63,45 +55,34 @@
 .icon-button {
      -fx-background-color: transparent;
      -fx-font-size: 18px;
-        -fx-text-fill: #555;
+     -fx-text-fill: #546e7a;
      -fx-padding: 2px 6px;
      -fx-pref-height: auto;
      -fx-background-radius: 15px; /* Make it roundish */
-
 }
 .icon-button:hover {
-   -fx-background-color: #007ab8;; /* Light grey on hover */
+     -fx-background-color: #eceff1; /* Light grey on hover */
 }
 
 .send-button {
-    -fx-font-weight: bold;
-    -fx-background-color: #0088cc;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-padding: 6px 12px;
-   -fx-background-radius: 20;
-
+     -fx-background-color: #5093e1;
+     -fx-font-weight: bold;
 }
 
 .menu-button {
      -fx-background-color: transparent;
      -fx-font-size: 18px;
-      -fx-text-fill: #555;
-
+     -fx-text-fill: #546e7a;
 }
 
 /* Text Fields */
 .text-field {
-    -fx-background-color: #f9f9f9;
     -fx-pref-height: 40px;
     -fx-font-size: 14px;
-     -fx-background-radius: 15;
-     -fx-border-color: #cccccc;
-      -fx-background-radius: 5;
-     -fx-border-radius: 5;
-     -fx-padding: 5 10;
-    -fx-background-radius: 5;
-
+    -fx-background-radius: 5px;
+    -fx-border-color: #c5d0da;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 10px;
 }
 .text-field:focused {
     -fx-border-color: #5093e1;
@@ -109,27 +90,18 @@
 }
 
 /* --- Chat Page Specific --- */
-/* الشريط الجانبي */
 
 .sidebar {
-   /* ---  -fx-background-color: #e7edf2;--- */  /* Slightly different background for sidebar */
-  /* --    -fx-border-color: transparent #d0d8e0 transparent transparent;--- */ /* Right border */
-   /* --    -fx-border-width: 1px; --- */
-    -fx-background-color: #f2f9ff;
-       -fx-border-color: #e0e0e0;
-       -fx-border-width: 0 1 0 0;
-
-
+     -fx-background-color: #e7edf2; /* Slightly different background for sidebar */
+     -fx-border-color: transparent #d0d8e0 transparent transparent; /* Right border */
+     -fx-border-width: 1px;
 }
-/* ترويسة الشريط الجانبي */
-
 .sidebar-header {
-      -fx-background-color: #e5f3ff; /* Match sidebar */
+     -fx-background-color: #e7edf2; /* Match sidebar */
      -fx-border-color: transparent transparent #d0d8e0 transparent; /* bottom border */
      -fx-border-width: 1px;
-   -fx-padding: 5 10;; /* Added padding */
-    -fx-spacing: 10;
-}
+     padding: 5px; /* Added padding */
+
 }
 .sidebar-header .text-field {
     -fx-pref-height: 30px; /* Smaller search field */
@@ -137,9 +109,7 @@
 
 
 .chat-list {
-
-    -fx-background-color: transparent;
-       -fx-border-color: transparent;
+    -fx-background-color: #e7edf2;
 }
 
 .chat-list .list-cell { /* Style individual list items */
@@ -155,63 +125,28 @@
 }
 .chat-list .list-cell:filled:hover {
     -fx-background-color: #dbe4ec; /* Light hover */
-      -fx-scale-x: 1.1;
-        -fx-scale-y: 1.1;
-           transition:
-           -fx-background-color 0.5s ease,
-           -fx-scale-x 0.5s ease,
-            -fx-scale-y 0.5s ease;
 }
 
-/* الرسائل والمنطقة الوسطى */
-
 .chat-header {
-   -fx-background-color: #f2f2f2;; /* White header */
-    -fx-border-color: #ddd; /* Bottom border */
-    -fx-border-width: 0 0 1 0;
-     -fx-padding: 10px 15px; /* Added padding */
-     -fx-font-size: 16px;
-     -fx-font-weight: bold;
-
-
+    -fx-background-color: #ffffff; /* White header */
+    -fx-border-color: transparent transparent #e0e6ec transparent; /* Bottom border */
+    -fx-border-width: 1px;
+    -fx-padding: 10px 15px; /* Added padding */
 }
 
 .chat-title {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #333;
-
 }
 
 .message-area {
-   -fx-background-color: #e5f8e8; /* Match root background or use image */
-   -fx-background-radius: 0;
-    -fx-padding: 10;
-    -fx-border-color: transparent;
+    -fx-background-color: #f0f4f8; /* Match root background or use image */
     /* Example background image (like Telegram web) */
     /* -fx-background-image: url('path/to/your/tileable/background.png'); */
     /* -fx-background-repeat: repeat; */
-
-        -fx-background-radius: 0;
-        -fx-padding: 10;
-        -fx-border-color: transparent;
 }
 
-/* الرسالة الواحدة */
-.message-bubble {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 10;
-    -fx-padding: 10;
-    -fx-border-color: #dcdcdc;
-    -fx-border-width: 1;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0.1, 0, 1);
-}
-
-/* الرسائل الصوتية أو المحمية */
-.voice-message {
-    -fx-background-color: #ffeaf0;
-    -fx-background-radius: 10;
-}
 .message-area .scroll-bar:vertical,
 .message-area .scroll-bar:horizontal{
     -fx-background-color:transparent; /* Hide scrollbar track */
@@ -231,7 +166,6 @@
 /* Style for VBox holding messages - needed for background */
 #messageDisplayArea {
     -fx-background-color: transparent;
-
 }
 
 /* Placeholder for message bubbles */
@@ -243,8 +177,7 @@
     /* Add more styles for sent vs received messages */
     -fx-border-color: #e1e8ed; /* Light border */
     -fx-border-width: 1px;
-    -fx-max-width: 400px;       /* عرض مناسب لمنع الكسر عند كل حرف */
-
+    -fx-max-width: 70%; /* Prevent message bubbles from filling width */
     -fx-wrap-text: true;
 }
 
@@ -258,11 +191,10 @@
 
 
 .input-area {
-        -fx-background-color: #ffffff; /* White input area */
-    -fx-border-color: #e0e0e0; /* Top border */
-     -fx-border-width: 1 0 0 0;
+     -fx-background-color: #ffffff; /* White input area */
+     -fx-border-color: #e0e6ec transparent transparent transparent; /* Top border */
+     -fx-border-width: 1px;
      -fx-padding: 8px 15px; /* Added padding */
-
 }
 
 .input-area .text-field {
