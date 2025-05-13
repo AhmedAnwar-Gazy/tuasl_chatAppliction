@@ -1,4 +1,5 @@
-import javax.net.ssl.SSLEngineResult;
+package orgs.clint_pages.Models;
+
 import java.util.ArrayList;
 
 public class User {

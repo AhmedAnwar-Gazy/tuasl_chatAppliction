@@ -1,3 +1,5 @@
+package orgs.clint_pages.Models;
+
 public class Member {
 
     private  String name;
