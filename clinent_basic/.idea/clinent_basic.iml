@@ -5,6 +5,10 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" name="javafx-swt1" level="application" />
+=======
+    <orderEntry type="library" name="lib" level="project" />
+>>>>>>> a2252d50341e779b927e20ae3bfc92f35ffc396c
   </component>
 </module>

@@ -1,3 +1,5 @@
+package orgs.clint_pages.Models;
+
 import java.util.ArrayList;
 
 public class Chamnel {
@@ -14,7 +16,7 @@ public class Chamnel {
         this.members = members;
         this.content = content;
         this.messages = messages;
-
+        
     }
 
     public String getProfilepicture() {
