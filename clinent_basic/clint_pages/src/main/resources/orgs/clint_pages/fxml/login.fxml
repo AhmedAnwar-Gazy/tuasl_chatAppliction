@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="495.0" prefWidth="567.0" spacing="20.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.clint_pages.controllers.LoginController">
+<VBox alignment="CENTER" spacing="20.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.clint_pages.controllers.LoginController">
     <padding>
         <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
     </padding>
@@ -19,9 +19,9 @@
         </font>
     </Label>
 
-    <TextField fx:id="usernameField" maxWidth="300" prefHeight="43.0" prefWidth="300.0" promptText="Username or Email" />
-    <PasswordField fx:id="passwordField" maxWidth="300" prefHeight="43.0" prefWidth="300.0" promptText="Password" />
+    <TextField fx:id="usernameField" promptText="Username or Email" maxWidth="300"/>
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300"/>
 
-    <Button fx:id="loginButton" maxHeight="43.0" maxWidth="300" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="43.0" prefWidth="300.0" styleClass="action-button" text="Login" />
-    <Button fx:id="registerButton" maxWidth="300" mnemonicParsing="false" onAction="#handleRegisterButtonAction" prefHeight="43.0" prefWidth="300.0" styleClass="secondary-button" text="Create Account" />
+    <Button fx:id="loginButton" maxWidth="300" mnemonicParsing="false" onAction="#handleLoginButtonAction" styleClass="action-button" text="Login" />
+    <Button fx:id="registerButton" maxWidth="300" mnemonicParsing="false" onAction="#handleRegisterButtonAction" styleClass="secondary-button" text="Create Account" />
 </VBox>

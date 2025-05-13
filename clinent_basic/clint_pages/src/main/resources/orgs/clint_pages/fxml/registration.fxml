@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="15.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.clint_pages.controllers.RegistrationController">
+<VBox alignment="CENTER" spacing="15.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.clint_pages.controllers.RegistrationController">
     <padding>
         <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
     </padding>
@@ -19,10 +19,10 @@
         </font>
     </Label>
 
-    <TextField fx:id="usernameField" maxWidth="300" prefHeight="43.0" prefWidth="300.0" promptText="Username" />
-    <TextField fx:id="emailField" maxWidth="300.0" prefHeight="43.0" promptText="Email" />
-    <PasswordField fx:id="passwordField" maxWidth="300" prefHeight="43.0" promptText="Password" />
-    <PasswordField fx:id="confirmPasswordField" maxWidth="300" prefHeight="43.0" promptText="Confirm Password" />
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="300"/>
+    <TextField fx:id="emailField" promptText="Email" maxWidth="300"/>
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300"/>
+    <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" maxWidth="300"/>
 
     <Button fx:id="registerButton" maxWidth="300" mnemonicParsing="false" onAction="#handleRegisterButtonAction" styleClass="action-button" text="Register" />
     <Button fx:id="backButton" maxWidth="300" mnemonicParsing="false" onAction="#handleBackButtonAction" styleClass="secondary-button" text="Back to Login" />
