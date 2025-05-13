@@ -1,6 +1,8 @@
 module orgs.clint_pages {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.swt;
+    requires java.desktop;
 
 
     opens orgs.clint_pages to javafx.fxml;
