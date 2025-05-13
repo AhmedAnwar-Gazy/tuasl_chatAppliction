@@ -36,6 +36,13 @@
 }
 .action-button:hover {
     -fx-background-color: #3a7bc8;
+           -fx-scale-x: 1.1;
+             -fx-scale-y: 1.1;
+                 transition:
+            -fx-background-color 0.5s ease,
+               -fx-scale-x 0.5s ease,
+                -fx-scale-y 0.5s ease;
+
 }
 
 .secondary-button {
@@ -58,6 +65,12 @@
 }
 .danger-button:hover{
      -fx-background-color: #ef5350;
+            -fx-scale-x: 1.1;
+              -fx-scale-y: 1.1;
+                  transition:
+             -fx-background-color 0.5s ease,
+                -fx-scale-x 0.5s ease,
+                 -fx-scale-y 0.5s ease;
 }
 
 .icon-button {
@@ -70,7 +83,13 @@
 
 }
 .icon-button:hover {
-   -fx-background-color: #007ab8;; /* Light grey on hover */
+   -fx-background-color: #007ab8;
+           -fx-scale-x: 1.1;
+             -fx-scale-y: 1.1;
+                 transition:
+            -fx-background-color 0.5s ease,
+               -fx-scale-x 0.5s ease,
+                -fx-scale-y 0.5s ease;/* Light grey on hover */
 }
 
 .send-button {
@@ -244,7 +263,6 @@
     -fx-border-color: #e1e8ed; /* Light border */
     -fx-border-width: 1px;
     -fx-max-width: 400px;       /* عرض مناسب لمنع الكسر عند كل حرف */
-
     -fx-wrap-text: true;
 }
 
