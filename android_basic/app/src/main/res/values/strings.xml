@@ -18,4 +18,9 @@
     <string name="share">Share</string>
     <string name="add_to_favorates">Add to favorates</string>
     <string name="block">Block</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone</string>
+    <string name="save">Save</string>
 </resources>

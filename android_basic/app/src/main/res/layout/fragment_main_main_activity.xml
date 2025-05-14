@@ -1,51 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_style_black_2"
-    tools:context=".controller.MainFragmentMainActivity">
-
-    <LinearLayout
+    tools:context=".controller.MainFragmentMainActivity"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainerNavigation"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/headerName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="start"
+            android:padding="16dp"
             android:text="@string/header_main_messages_fragment_name"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:padding="16dp"
             android:textStyle="bold"
-            android:gravity="start"
-            android:background="@color/black"
             />
-
+            <ImageButton
+                android:id="@+id/ProfileImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_shape_background"
+                android:contentDescription="@string/profile_of_user_Image_view_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/SearchContainerLayout"
+                app:circularflow_viewCenter="@id/StartMenu"
+                android:src="@drawable/default_profile"
+                />
         <LinearLayout
+            android:id="@+id/SearchContainerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/headerName"
+            app:layout_constraintStart_toStartOf="parent"
             >
 
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="90"
-            android:autofillHints="creditCardExpirationDate"
-            android:background="@drawable/border_radio_shape"
-            android:hint="@string/search_hint_name"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            />
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="90"
+                android:autofillHints="creditCardExpirationDate"
+                android:background="@drawable/border_radio_shape"
+                android:hint="@string/search_hint_name"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
             <ImageButton
+                android:id="@+id/SearchImageButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
@@ -55,29 +75,42 @@
                 />
 
         </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/MainFragmentContentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@+id/bottomContainerNavigation"
-        android:layout_below="@+id/headerContainerNavigation"
         android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/bottomContainerNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainerNavigation"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <FrameLayout
+        android:id="@+id/StartMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomContainerNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomContainerNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation_bar"
         android:background="@color/black"
         app:itemTextColor="@color/white"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_bar" />
 
 
 
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

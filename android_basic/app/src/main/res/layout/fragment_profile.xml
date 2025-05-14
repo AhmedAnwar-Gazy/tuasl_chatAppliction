@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_radio_shape"
+    tools:context=".controller.ProfileFragment">
+
+
+    <ImageView
+        android:id="@+id/ProfilePictureImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_shape_background"
+        android:contentDescription="@string/profile_of_user_Image_view_desc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/default_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageButton
+        android:id="@+id/EditUserProfileImageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/circle_shape_background"
+        android:src="@android:drawable/ic_menu_edit"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/ProfilePictureImageView"
+        app:layout_constraintEnd_toEndOf="@+id/ProfilePictureImageView"
+
+        />
+
+    <EditText
+        android:id="@+id/UserNameEditText"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="@string/user_name_TV_eg"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfilePictureImageView" />
+
+    <EditText
+        android:id="@+id/FullNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="phone"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/UserNameEditText" />
+
+    <TextView
+        android:id="@+id/FullNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/FullNameEditText"
+        android:text="@string/full_name"
+        app:layout_constraintBottom_toBottomOf="@+id/FullNameEditText"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/FullNameEditText"
+        />
+
+    <EditText
+        android:id="@+id/UserPasswordEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/FullNameEditText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        app:layout_constraintBottom_toBottomOf="@+id/UserPasswordEditText"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/FullNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/UserPasswordEditText" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        app:layout_constraintBottom_toBottomOf="@id/EmailEditText"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/FullNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/EmailEditText" />
+    <EditText
+        android:id="@+id/EmailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/UserPasswordEditText"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        app:layout_constraintBottom_toBottomOf="@id/UserPhoneNumberEditText"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/FullNameLabel"
+        app:layout_constraintTop_toTopOf="@id/UserPhoneNumberEditText" />
+    <EditText
+        android:id="@+id/UserPhoneNumberEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="phone"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@+id/EmailEditText"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/UserPhoneNumberEditText"
+        android:text="@string/save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

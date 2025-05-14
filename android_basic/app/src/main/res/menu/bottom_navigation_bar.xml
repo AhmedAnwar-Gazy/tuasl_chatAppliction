@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/chats"
+        android:id="@+id/Chats"
         android:title="@string/chats"
         android:icon="@drawable/icon_chats"
         />
