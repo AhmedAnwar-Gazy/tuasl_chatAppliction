@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_style_black_2"
+    tools:context=".controller.MainFragmentMainActivity">
+
+    <LinearLayout
+        android:id="@+id/headerContainerNavigation"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/headerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/header_main_messages_fragment_name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:background="@color/black"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="90"
+            android:autofillHints="creditCardExpirationDate"
+            android:background="@drawable/border_radio_shape"
+            android:hint="@string/search_hint_name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            />
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:background="@drawable/circle_shape_background"
+                android:contentDescription="@string/searchbutton"
+                android:src="@drawable/icon_search"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/MainFragmentContentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bottomContainerNavigation"
+        android:layout_below="@+id/headerContainerNavigation"
+        android:background="@color/black"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomContainerNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation_bar"
+        android:background="@color/black"
+        app:itemTextColor="@color/white"
+        />
+
+
+
+
+
+</RelativeLayout>

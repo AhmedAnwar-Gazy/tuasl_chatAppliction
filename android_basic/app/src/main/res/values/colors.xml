@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="icons_nav_color_1">#A98686</color>
+    <color name="icons_nav_color_2">#AB6C6C</color>
+    <!-- In your colors.xml -->
+    <color name="grey_300">#E0E0E0</color>
+    <color name="primary">#6200EE</color>
+    <color name="primary_light">#03DAC6</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="backgrount_style_black_1">#FF000000</color>
+    <color name="background_style_black_2">#180707</color>
+    <color name="text_style_black_1">#FFFFFFFF</color>
+    <color name="text_style_black_2">#E8F9F9</color>
+
 </resources>
