@@ -5,6 +5,7 @@ import com.chat_me.tuasolchat.models.Status;
 import com.chat_me.tuasolchat.models.subModels.ChatItem;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Member implements ChatItem {
     private String id;
@@ -16,11 +17,20 @@ public class Member implements ChatItem {
     private Bitmap bitmapProfilePicture;
     private int unreadMessagesCount;
 
-    public Member(String id,String name, String profilepicture, String rule, Status status) {
+    public Member(
+            String id,
+            String name, 
+            String profilepicture, 
+            String rule, 
+            Status status
+    ) {
         this.id = id;
         this.name = name;
         this.profilepicture = profilepicture;
         this.rule = rule;
+        this.status = status;
+        this.messages = new ArrayList<>();
+        messages.add(new Message("1", "2", "byte[] text".getBytes(), Type.FILE, "extention", null, new Date("12/12/2023")));// , Type type, String extention, byte[] media, Date dateSent)
     }
     public Member(String name, String profilepicture, String rule, Status status) {
         this.name = name;
@@ -50,7 +60,6 @@ public class Member implements ChatItem {
         return name;
     }
 
-
     @Override
     public ArrayList<Message> getMessages() {return this.messages;}
 
@@ -64,9 +73,6 @@ public class Member implements ChatItem {
         this.messages = messages;
     }
 
-    /**
-     * @param picture
-     */
     @Override
     public void setBitmapProfilePicture(Bitmap picture) {
         this.bitmapProfilePicture = picture;
@@ -77,9 +83,6 @@ public class Member implements ChatItem {
         return profilepicture;
     }
 
-    /**
-     * @return
-     */
     @Override
     public Bitmap getBitmapProfilepicture() {
        return this.bitmapProfilePicture;
@@ -102,33 +105,21 @@ public class Member implements ChatItem {
         return status;
     }
 
-    /**
-     * @return
-     */
     @Override
     public String getType() {
         return "member";
     }
 
-    /**
-     * @return
-     */
     @Override
     public int getUnreadMessagesCount() {
        return this.unreadMessagesCount;
     }
 
-    /**
-     * @param count
-     */
     @Override
     public void setUnreadMessagesCount(int count) {
         this.unreadMessagesCount = count;
     }
 
-    /**
-     * @param type
-     */
     @Override
     public void setType(String type) {
     }

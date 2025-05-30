@@ -14,13 +14,12 @@
         android:id="@+id/ProfileImageImageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:contentDescription="@string/profile_of_user_Image_view_desc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/circle_shape_background"
         android:backgroundTint="@color/black_backgrounded"
+        android:contentDescription="@string/profile_of_user_Image_view_desc"
         android:foregroundGravity="center"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/UserNameTextView"
