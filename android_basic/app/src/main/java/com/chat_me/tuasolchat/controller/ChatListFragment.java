@@ -3,12 +3,21 @@ package com.chat_me.tuasolchat.controller;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.chat_me.tuasolchat.R;
+import com.chat_me.tuasolchat.controller.subModels.ChatsRecyclerViewAdapter;
+import com.chat_me.tuasolchat.models.Chanel;
+import com.chat_me.tuasolchat.models.Member;
+import com.chat_me.tuasolchat.models.Status;
+import com.chat_me.tuasolchat.models.subModels.ChatItem;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,33 +26,25 @@ import com.chat_me.tuasolchat.R;
  */
 public class ChatListFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "chats_ids";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private ArrayList<String> members;
+    private RecyclerView recyclerView;
     public ChatListFragment() {
-        // Required empty public constructor
+        // Required   public constructor
     }
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param chats_ids Parameter 1.
      * @return A new instance of fragment ChatListFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static ChatListFragment newInstance(String param1, String param2) {
+    public static ChatListFragment newInstance(ArrayList<String> chats_ids) {
         ChatListFragment fragment = new ChatListFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putStringArrayList(ARG_PARAM1,chats_ids);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,8 +53,36 @@ public class ChatListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            members = getArguments().getStringArrayList(ARG_PARAM1);
+        }
+        // TODO: replace this array list by the list of chats
+        ArrayList<ChatItem> items = new ArrayList<ChatItem>();
+        items.add(
+            new Member(
+                // String id,String name, String profilepicture, String rule, Status status
+                "1",
+                "John Doe",
+                "null",
+                "10:30 AM",
+                Status.ONLINE
+            ));
+        items.add(
+                new Chanel(
+                        //String profilepicture, String bio, ArrayList<Member> members, String content, ArrayList<Message> messages
+                        "2",
+                        "hello this is a bio",
+                        null,
+                        "this is a content",
+                        null
+                ));
+        ChatsRecyclerViewAdapter adapter = new ChatsRecyclerViewAdapter(items, getChildFragmentManager());
+        RecyclerView.LayoutManager ln = new LinearLayoutManager(this.getContext());
+
+        recyclerView = requireActivity().findViewById(R.id.chats_recyclaerview);
+        if(recyclerView != null){
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(ln);
+            recyclerView.setAdapter(adapter);
         }
     }
 
@@ -61,6 +90,6 @@ public class ChatListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat_list, container, false);
+        return inflater.inflate(R.layout.chat_list_recyclerview, container, false);
     }
 }

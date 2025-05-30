@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
-        android:text="Hi Mubarak How Are You....."
+        android:text="@string/hi_mubarak_how_are_you"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/LastMessageDateTextView"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:gravity="end"
-        android:text="9:13 AM"
+        android:text="@string/_9_13_am"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/LastMessageTextView"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -76,7 +76,6 @@
         app:layout_constraintBottom_toBottomOf="@id/UserNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/UserNameTextView"
-        android:outlineAmbientShadowColor="@color/material_on_background_emphasis_medium"
         />
         
         

@@ -28,6 +28,7 @@ public class ChatListItemFragment extends Fragment {
     private static final String ARG_LAST_MESSAGE_DATE = "lastMessageDate";
     private static final String ARG_UNREAD_COUNT = "unreadCount";
     private static final String ARG_PROFILE_IMAGE = "profileImage";
+    private static final String ARG_TYPE = "chat_type";
     // UI components
     private TextView userNameTextView;
     private TextView lastMessageTextView;
@@ -35,12 +36,22 @@ public class ChatListItemFragment extends Fragment {
     private TextView unreadMessagesTextView;
     private ImageView profileImageView;
     private Bitmap currentProfileBitmap;
+    private String Type;
+    private String id;
     /**
      * Required empty public constructor.
      * Fragments should be instantiated through newInstance().
      */
     public ChatListItemFragment() {
         // Fragments should have empty constructors
+    }
+    public ChatListItemFragment(View view) {
+        initializeViews(view);
+
+        // Populate data if arguments exist
+        if (getArguments() != null) {
+            populateChatItemData();
+        }
     }
 
     /**
@@ -60,7 +71,8 @@ public class ChatListItemFragment extends Fragment {
             String lastMessage,
             String lastMessageDate,
             int unreadCount,
-            Bitmap profileImage
+            Bitmap profileImage,
+            String type
     ) {
         if (userId == null ) {
             throw new IllegalArgumentException("User ID cannot be null");
@@ -72,6 +84,7 @@ public class ChatListItemFragment extends Fragment {
         args.putString(ARG_LAST_MESSAGE, lastMessage);
         args.putString(ARG_LAST_MESSAGE_DATE, lastMessageDate);
         args.putInt(ARG_UNREAD_COUNT, unreadCount);
+        args.putString(ARG_TYPE,type);
 
         if (profileImage != null) {
             // Scale down large images (adjust 200 to your needs)
@@ -81,7 +94,6 @@ public class ChatListItemFragment extends Fragment {
                     200,
                     true
             );
-
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             scaledBitmap.compress(Bitmap.CompressFormat.WEBP, 85, stream); // WEBP is more efficient
             args.putByteArray(ARG_PROFILE_IMAGE, stream.toByteArray());
@@ -89,7 +101,6 @@ public class ChatListItemFragment extends Fragment {
                 profileImage.recycle();
             }
         }
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -144,7 +155,8 @@ public class ChatListItemFragment extends Fragment {
             userNameTextView.setText(args.getString(ARG_USER_NAME));
             lastMessageTextView.setText(args.getString(ARG_LAST_MESSAGE));
             lastMessageDateTextView.setText(args.getString(ARG_LAST_MESSAGE_DATE));
-
+            this.id = args.getString(ARG_USER_ID,"unknown");
+            this.Type = args.getString(ARG_TYPE);
             int unreadCount = args.getInt(ARG_UNREAD_COUNT, 0);
             if (unreadCount > 0) {
                 unreadMessagesTextView.setText(String.valueOf(unreadCount));
@@ -179,6 +191,21 @@ public class ChatListItemFragment extends Fragment {
         lastMessageTextView.setText(message);
         lastMessageDateTextView.setText(date);
     }
+    public void setData(String id, String name, String LastMessage, String LastTime,int UnreadMessages,Bitmap profile , String type){
+        this.id = id;
+        this.Type = type;
+        this.updateUnreadCount(UnreadMessages);
+        this.updateLastMessage(LastMessage,LastTime);
+        this.updateProfile(profile);
+        this.userNameTextView.setText(name);
+    }
+    public String getChatId(){
+        return this.id;
+    }
+    public String getChatType(){
+        return  this.Type;
+    }
+
     public void updateProfile(Bitmap profileImage){
         try {
             if (profileImageView != null) {
@@ -188,12 +215,25 @@ public class ChatListItemFragment extends Fragment {
             }
         } catch (Exception e) {
             Log.e("ChatListItem", "Error loading profile image", e);
+            if(this.Type == "channel"){
+                this.profileImageView.setImageResource(R.drawable.icon_group);
+            }else{
             profileImageView.setImageResource(R.drawable.default_profile);
+            }
         }
     }
 
+
     public Bitmap getCurrentProfileBitmap() {
         return currentProfileBitmap;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
     }
 
     /**

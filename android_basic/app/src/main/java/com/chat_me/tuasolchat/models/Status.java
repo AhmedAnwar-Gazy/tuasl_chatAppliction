@@ -1,4 +1,4 @@
 package com.chat_me.tuasolchat.models;
-
-public class sdfasdf {
+public enum Status {
+    ONLINE,OFFLINE;
 }

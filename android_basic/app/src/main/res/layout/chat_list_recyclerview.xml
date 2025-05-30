@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chats_recyclaerview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgrount_style_black_1"
+    android:orientation="vertical"
+    tools:context=".controller.ChatListFragment"
+    tools:listitem="@layout/fragment_chat_list_item"
+    >
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:listitem="@layout/fragment_chat_list_item"-->
+<!--        android:background="@color/cardview_light_background"-->
+<!--        />-->
+
+</androidx.recyclerview.widget.RecyclerView>

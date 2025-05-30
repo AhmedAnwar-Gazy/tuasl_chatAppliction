@@ -13,5 +13,6 @@
     <color name="background_style_black_2">#180707</color>
     <color name="text_style_black_1">#FFFFFFFF</color>
     <color name="text_style_black_2">#E8F9F9</color>
+    <color name="black_backgrounded">#A2523333</color>
 
 </resources>
