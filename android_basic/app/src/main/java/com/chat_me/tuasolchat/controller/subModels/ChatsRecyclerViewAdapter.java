@@ -127,10 +127,8 @@ public class ChatsRecyclerViewAdapter extends RecyclerView.Adapter<ChatsRecycler
             } else {
                 userNameTextView.setText("NoName");
             }
-            String messageText = ""; // Default
-            Date messageDate = null; // Default
-
-            // Example: If ChatItem has a getMessages() List<com.yourpackage.Message>
+            String messageText = "";
+            Date messageDate = null;
              if (item.getMessages() != null && !item.getMessages().isEmpty()) {
                  Message lastMsg = item.getMessages().get(item.getMessages().size() - 1);
                  if (lastMsg.getText() != null) {
@@ -170,7 +168,7 @@ public class ChatsRecyclerViewAdapter extends RecyclerView.Adapter<ChatsRecycler
                     profileImageView.setImageResource(R.drawable.icon_profile);
             }
             profileImageView.setOnClickListener(v -> {
-                //TODO open item detals view
+                //TODO open Chat detals view
                 //OpenDetails(item);
             });
         }
