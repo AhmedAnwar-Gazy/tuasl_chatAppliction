@@ -27,7 +27,7 @@ public class MainApp extends Application {
         if(s.executeUpdate(sql) > 0){
             System.out.println("Table Created");
         }
-        sql = "Insert into my_table (id,email) values(3,'mubarak@email.com'); ";
+        sql = "Insert into my_table (email) values('ahmed anwar@email.com'); ";
         if(s.executeUpdate(sql) > 0){
             System.out.println("One Row Inserted");
         }
